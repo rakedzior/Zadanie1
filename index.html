@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">  <!-- wlasny styl -->
+    <link rel="shortcut icon" type="image/png" href="favicon.png"> <!-- logo google favicon -->
+    <script src="js.js"></script> <!-- javascript -->
+    <!-- font awesome -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet"
+         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+         crossorigin="anonymous" />
+    <!-- material design -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
+    <link href="material-components-web.min.css" rel="stylesheet" />
+    <!-- material design js -->
+    <script src="material-components-web.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="nav">
+          <ul>
+              <li><a class="link" href="https://mail.google.com/mail/u/0/">Gmail</a></li>
+              <li><a class="link" href="https://www.google.pl/imghp">Grafika</a></li>
+              <li><a class="link" href="https://about.google/intl/pl/products"><i class="fas fa-th"></i></a></li>
+              <li><a href="https://accounts.google.com/signin/v2/sl/pwd"><img src="profile.png"></a></li>
+          </ul>
+      </div>
+      <div class="main">
+          <div class="logo">
+              <img src="logo.png">
+          </div>
+          <div class="searchbar">
+              <form action="https://google.com/search" method="get" id="form1">
+                      <a class="icon"><i class="fas fa-search"></i></a>
+                      <input class="search" type="text" name="q" required autofocus>
+                      <a class="icon"><i class="fas fa-keyboard"><div id="search-hover1">Narzędzie do wprowadzania tekstu</div></i></a>
+                      <a class="icon"><i class="fas fa-microphone" onclick="startDictation()"><div id="search-hover2">Wyszukiwanie głosowe</div></i></a>
+              </form>
+          </div>
+          <div class="buttons">
+              <button class="mdc-button" type="submit" form="form1" id="button1">Szukaj w Google</button>
+              <button class="mdc-button" type="submit" id="button2"><a href="https://www.google.com/doodles" id="button2a">Szczęśliwy traf</a></button>
+
+          </div>
+      </div>
+      <div class="footer">
+          <div class="footer1">
+          <p>Polska</p>
+          </div>
+          <div class="footer2">
+              <ul>
+                  <li><a href="https://ads.google.com/intl/pl_pl/home">Reklamuj się</a></li>
+                  <li><a href="https://www.google.pl/services">Dla firm</a></li>
+                  <li><a href="https://about.google/intl/pl_pl">O nas</a></li>
+              </ul>
+              <ul>
+                  <li><a href="https://policies.google.com/privacy">Prywatność</a></li>
+                  <li><a href="https://policies.google.com/terms">Warunki</a></li>
+                  <li><a href="https://www.google.pl/preferences">Ustawienia</a></li>
+              </ul>
+         </div>
+     </div>
+</body>
+</html>
