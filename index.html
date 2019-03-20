@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>Google</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">  <!-- wlasny styl -->
     <link rel="shortcut icon" type="image/png" href="favicon.png"> <!-- logo google favicon -->
-    <script src="js.js"></script> <!-- javascript -->
     <!-- font awesome -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet"
@@ -14,13 +13,35 @@
     <!-- material design -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
     <link href="material-components-web.min.css" rel="stylesheet" />
-    <!-- material design  js -->
+    <!-- material design js -->
     <script src="material-components-web.min.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
+    <!-- vue js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- animals js-->
+	 <script type="text/x-template" id="autocomplete-tpl">
+		<div class="autocomplete">
+		  <label :for="id">{{label}}</label>
+		  <textarea v-if="textarea" :id="id" :rows="rows" :cols="cols" class="autocomplete-input" :placeholder="placeholder" @focusout="focusout" @focus="focus" @keydown.13="chooseItem" @keydown.tab="chooseItem" @keydown.40="moveDown" @keydown.38="moveUp" v-model="inputValue"
+			type="text"></textarea>
+		  <input v-else :id="id" class="autocomplete-input" :placeholder="placeholder" @focusout="focusout" @focus="focus" @keydown.13="chooseItem" @keydown.tab="chooseItem" @keydown.40="moveDown" @keydown.38="moveUp" v-model="inputValue" type="text">
+
+
+		  <ul :class="{
+			'autocomplete-list': true,
+			[id+'-list']: true
+		  }" v-if="searchMatch.length > 0">
+			<li :class="{active: selectedIndex === index}" v-for="(result, index) in searchMatch" @click="selectItem(index), chooseItem()" v-html="highlightWord(result)">
+
+			</li>
+		  </ul>
+		</div>
+	</script>
 </head>
 <body>
+
     <div class="nav">
           <ul>
               <li><a class="link" href="https://mail.google.com/mail/u/0/">Gmail</a></li>
@@ -29,18 +50,23 @@
               <li><a href="https://accounts.google.com/signin/v2/sl/pwd"><img src="profile.png"></a></li>
           </ul>
       </div>
-      <div class="main">
+      <div class="main" id="main-vue">
           <div class="logo">
               <img src="logo.png">
           </div>
           <div class="searchbar">
               <form action="https://google.com/search" method="get" id="form1">
                       <a class="icon"><i class="fas fa-search"></i></a>
-                      <input class="search" type="text" name="q" required autofocus>
+                      <div id="app">
+                          <div class="container-item">
+                          <autocomplete />
+                          </div>
+                      </div>
                       <a class="icon"><i class="fas fa-keyboard"><div id="search-hover1">Narzędzie do wprowadzania tekstu</div></i></a>
                       <a class="icon"><i class="fas fa-microphone" onclick="startDictation()"><div id="search-hover2">Wyszukiwanie głosowe</div></i></a>
               </form>
           </div>
+		  <div-autocompleter v-bind:inputcontent="inputContent" v-bind:animalnames="animalNames"></div-autocompleter>
           <div class="buttons">
               <button class="mdc-button" type="submit" form="form1" id="button1">Szukaj w Google</button>
               <button class="mdc-button" type="submit" id="button2"><a href="https://www.google.com/doodles" id="button2a">Szczęśliwy traf</a></button>
@@ -64,5 +90,7 @@
               </ul>
          </div>
      </div>
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.3/vue.js'></script>
+<script src="animals.js"></script>
 </body>
 </html>
