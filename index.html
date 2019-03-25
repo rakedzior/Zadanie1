@@ -20,25 +20,6 @@
             crossorigin="anonymous"></script>
     <!-- vue js -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <!-- animals js-->
-	 <script type="text/x-template" id="autocomplete-tpl">
-		<div class="autocomplete">
-		  <label :for="id">{{label}}</label>
-		  <textarea v-if="textarea" :id="id" :rows="rows" :cols="cols" class="autocomplete-input" :placeholder="placeholder" @focusout="focusout" @focus="focus" @keydown.13="chooseItem" @keydown.tab="chooseItem" @keydown.40="moveDown" @keydown.38="moveUp" v-model="inputValue"
-			type="text"></textarea>
-		  <input v-else :id="id" class="autocomplete-input" :placeholder="placeholder" @focusout="focusout" @focus="focus" @keydown.13="chooseItem" @keydown.tab="chooseItem" @keydown.40="moveDown" @keydown.38="moveUp" v-model="inputValue" type="text">
-
-
-		  <ul :class="{
-			'autocomplete-list': true,
-			[id+'-list']: true
-		  }" v-if="searchMatch.length > 0">
-			<li :class="{active: selectedIndex === index}" v-for="(result, index) in searchMatch" @click="selectItem(index), chooseItem()" v-html="highlightWord(result)">
-
-			</li>
-		  </ul>
-		</div>
-	</script>
 </head>
 <body>
 
@@ -58,15 +39,13 @@
               <form action="https://google.com/search" method="get" id="form1">
                       <a class="icon"><i class="fas fa-search"></i></a>
                       <div id="app">
-                          <div class="container-item">
-                          <autocomplete />
-                          </div>
-                      </div>
+                      <input v-model="inputContent"/>
                       <a class="icon"><i class="fas fa-keyboard"><div id="search-hover1">Narzędzie do wprowadzania tekstu</div></i></a>
                       <a class="icon"><i class="fas fa-microphone" onclick="startDictation()"><div id="search-hover2">Wyszukiwanie głosowe</div></i></a>
+                      </div>
               </form>
+              <v-autocompleter v-bind:input="inputContent" v-if="inputContent"></v-autocompleter>
           </div>
-		  <div-autocompleter v-bind:inputcontent="inputContent" v-bind:animalnames="animalNames"></div-autocompleter>
           <div class="buttons">
               <button class="mdc-button" type="submit" form="form1" id="button1">Szukaj w Google</button>
               <button class="mdc-button" type="submit" id="button2"><a href="https://www.google.com/doodles" id="button2a">Szczęśliwy traf</a></button>
@@ -90,7 +69,10 @@
               </ul>
          </div>
      </div>
- <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.3/vue.js'></script>
-<script src="animals.js"></script>
+     
+<!-- autocompleter -->
+<script src="autocompleter.js"></script>
+<!-- animals/words -->
+<script src="animals.js"></script>    
 </body>
 </html>
