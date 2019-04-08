@@ -23,7 +23,7 @@ a {
     color: #5F6368;
 }
 
-a:hover:not(#button2a) {
+a:hover:not(#button2a, .menu2 li a) {
     cursor:pointer;
     text-decoration: underline;
 }
@@ -227,7 +227,6 @@ footer {
 /*
 --- vue ---
  */
- 
 
 table {
     border-radius: 10px;
@@ -240,4 +239,102 @@ table {
     width: 450px;
     z-index: 4;
     background: white;
+}
+
+/*
+--- wyniki ---
+*/
+#container2 {
+position: fixed;
+top: 2%;
+width: 100%;
+}
+
+#linia {
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 20px;
+}
+
+#google2 {
+  height: 30px;
+  width: 92px;
+  min-height: 30px;
+  vertical-align: middle;
+  padding-right: 3%;
+}
+.n2, .menu2 {
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-start;
+ margin-left: 5%;
+ margin-right: 5%;
+}
+
+.icons {
+  position: absolute;
+  right: 5%;
+  justify-content: flex-end;
+}
+
+.menu2 ul {
+  list-style-type: none;
+}
+
+.menu2 li {
+  float: left;
+}
+.menu2 li a   {
+  display: block;
+  text-align: center;
+  padding: 8px;
+  text-decoration: none;
+  color: #777;
+  cursor: pointer;
+  margin: 0 8px;
+  font-size: 13px;
+}
+
+.menu2 li a:hover {
+  color: black;
+}
+
+.menu2 li a:focus {
+  color: #1a73e8;
+  font-weight: bold;
+  border-bottom: 2px solid #1a73e8;
+}
+
+.naglowek {
+    font-size: 18px;
+    color: #1a0dab;
+    line-height: 1.33;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.link a {
+    color: #006621;
+    font-size: 14px;
+    padding-top: 1px;
+    line-height: 1.43;
+}
+
+.link {
+    margin-bottom: 20px;
+}
+
+.tekst {
+    color: #545454;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+#wyszukiwanie {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+#wyszukiwanie, .wyniki {
+    margin-left: 10%;
 }

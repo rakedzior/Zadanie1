@@ -19,7 +19,7 @@ Vue.component('v-autocompleter', {
 })
 
     new Vue({
-        el: ".main",
+        el: ".n2",
         data: function () {
             return {
                 inputContent: "",

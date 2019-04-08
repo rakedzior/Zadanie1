@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Google</title>
@@ -36,7 +36,7 @@
               <img src="logo.png">
           </div>
           <div class="searchbar">
-              <form action="https://google.com/search" method="get" id="form1">
+              <form>
                       <a class="icon"><i class="fas fa-search"></i></a>
                       <div id="app">
                       <input v-model="inputContent"/>
@@ -47,7 +47,7 @@
               <v-autocompleter v-bind:input="inputContent" v-if="inputContent"></v-autocompleter>
           </div>
           <div class="buttons">
-              <button class="mdc-button" type="submit" form="form1" id="button1">Szukaj w Google</button>
+              <button class="mdc-button" type="submit" id="button1"><a href="wyszukiwarka.html">Szukaj w Google</a></button>
               <button class="mdc-button" type="submit" id="button2"><a href="https://www.google.com/doodles" id="button2a">Szczęśliwy traf</a></button>
 
           </div>
@@ -69,10 +69,10 @@
               </ul>
          </div>
      </div>
-     
+
 <!-- autocompleter -->
 <script src="autocompleter.js"></script>
 <!-- animals/words -->
-<script src="animals.js"></script>    
+<script src="animals.js"></script>
 </body>
 </html>
