@@ -19,6 +19,8 @@
             crossorigin="anonymous"></script>
     <!-- vue js -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-router@2.7.0/dist/vue-router.js"></script>
 </head>
 <body>
 <div id="container2">
@@ -42,21 +44,24 @@
             </ul>
           </div>
   </div>
-  <div class="menu2">
+  <div class="menu2" id="app2">
+    <nav>
       <ul>
-          <li><a href="#">Wszystko</a></li>
-          <li><a href="#">Wiadomości</a></li>
-          <li><a href="#">Grafika</a></li>
-          <li><a href="#">Mapy</a></li>
-          <li><a href="#">Filmy</a></li>
-          <li><a href="#">Więcej</a></li>
-          <li><a href="#">Ustawienia</a></li>
-          <li><a href="#">Narzędzia</a></li>
+        <li><router-link to="/" onclick="javascript:location.href='wyszukiwarka.html'">Wszystko</router-link></li>
+        <li><router-link to="/wiadomosci" onclick="document.getElementById('wyniczki').innerHTML = 'Wiadomości'">Wiadomosci</router-link></li>
+        <li><router-link to="/grafika" onclick="document.getElementById('wyniczki').innerHTML = 'Grafika'">Grafika</router-link></li>
+        <li><router-link to="/zakupy" onclick="document.getElementById('wyniczki').innerHTML = 'Zakupy'">Zakupy</router-link></li>
+        <li><router-link to="/filmy" onclick="document.getElementById('wyniczki').innerHTML = 'Filmy'">Filmy</router-link></li>
+        <li><router-link to="/wiecej" onclick="document.getElementById('wyniczki').innerHTML = 'Więcej'">Wiecej</router-link></li>
+        <li><router-link to="/ustawienia" onclick="document.getElementById('wyniczki').innerHTML = 'Ustawienia'">Ustawienia</router-link></li>
+        <li><router-link to="/narzedzia" onclick="document.getElementById('wyniczki').innerHTML = 'Narzędzia'">Narzedzia</router-link></li>
       </ul>
+    </nav>
+    <router-view></router-view>
   </div>
   <div id="linia"></div>
   <div id="wyszukiwanie">Około 234 000 000 wyników (0,28 s) </div>
-  <div class="wyniki">
+  <div class="wyniki" id="wyniczki">
     <div>
       <div class="naglowek n1">
         Standardowy fragment Lorem Ipsum
@@ -89,9 +94,8 @@
     </div>
   </div>
 </div>
-<!-- autocompleter -->
+<script src="router.js"></script>
 <script src="autocompleter.js"></script>
-<!-- animals/words -->
 <script src="animals.js"></script>
 </body>
 </html/
