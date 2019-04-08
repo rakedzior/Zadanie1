@@ -27,3 +27,13 @@ Vue.component('v-autocompleter', {
             }
         }
     })
+
+    new Vue({
+        el: ".n2",
+        data: function () {
+            return {
+                inputContent: "",
+                showAutocompleter: this.inputContent ? true : false
+            }
+        }
+    })
