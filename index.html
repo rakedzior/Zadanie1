@@ -22,7 +22,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-
+    <!-- nawigacja po prawej stronie na gorze -->
     <div class="nav">
           <ul>
               <li><a class="link" href="https://mail.google.com/mail/u/0/">Gmail</a></li>
@@ -31,10 +31,13 @@
               <li><a href="https://accounts.google.com/signin/v2/sl/pwd"><img src="profile.png"></a></li>
           </ul>
       </div>
+      <!-- glowna zawartosc strony -->
       <div class="main" id="main-vue">
+          <!-- zdjecie google -->
           <div class="logo">
               <img src="logo.png">
           </div>
+          <!-- pasek wyszukiwania -->
           <div class="searchbar">
               <form>
                       <a class="icon"><i class="fas fa-search"></i></a>
@@ -46,12 +49,14 @@
               </form>
               <v-autocompleter v-bind:input="inputContent" v-if="inputContent"></v-autocompleter>
           </div>
+          <!-- przyciski wysuzkiwania -->
           <div class="buttons">
-              <a href="wyszukiwarka.html"><button class="mdc-button" type="submit" id="button1">Szukaj w Google</button></a>
-              <a href="https://www.google.com/doodles" id="button2a"><button class="mdc-button" type="submit" id="button2">Szczęśliwy traf</button></a>
+              <button class="mdc-button" type="submit" id="button1"><a href="wyszukiwarka.html">Szukaj w Google</a></button>
+              <button class="mdc-button" type="submit" id="button2"><a href="https://www.google.com/doodles" id="button2a">Szczęśliwy traf</a></button>
 
           </div>
       </div>
+      <!-- stopki -->
       <div class="footer">
           <div class="footer1">
           <p>Polska</p>
@@ -69,7 +74,6 @@
               </ul>
          </div>
      </div>
-
 <!-- autocompleter -->
 <script src="autocompleter.js"></script>
 <!-- animals/words -->

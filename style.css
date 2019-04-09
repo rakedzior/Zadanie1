@@ -1,5 +1,5 @@
 /*
---- structure ---
+--- struktura ---
 */
 
 html {
@@ -49,13 +49,17 @@ a:hover:not(#button2a, .menu2 li a) {
 }
 
 /*
---- main content ---
+--- glowna zawartosc ---
 */
 
 .logo img {
     height: 92px;
     width: auto;
     margin: 20px 0px;
+}
+
+a img {
+    margin-right: 40px;
 }
 
 .main {
@@ -96,7 +100,7 @@ form {
 }
 
 /*
---- buttons ---
+--- przyciski ---
 */
 
 .buttons {
@@ -134,7 +138,7 @@ form {
 }
 
 /*
---- icons ---
+--- ikony ---
 */
 
 .fa-search {
@@ -179,7 +183,7 @@ form {
 }
 
 /*
---- footer ---
+--- stopki ---
 */
 
 footer {
@@ -225,7 +229,7 @@ footer {
 }
 
 /*
---- vue ---
+--- autocompleter ---
  */
 
 table {
@@ -242,8 +246,9 @@ table {
 }
 
 /*
---- wyniki ---
+--- strona wyszukiwania ---
 */
+
 #container2 {
 position: fixed;
 top: 2%;
